@@ -30,16 +30,32 @@ jobs:
 
 
   blih2:
-    runs-on: ubuntu-latest
+    hello_world_job:
+      runs-on: ubuntu-latest
+      name: A job to say hello
+      steps:
+      - name: Hello world action step
+        id: hello
+        uses: actions/204ducks_2019@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
-    steps:
-    - uses: actions/204ducks_2019
-    - name: test_env
-      env:
-        USER_GHUB: "Encorpluptit"
-        USER_BLIH: "damien.bernard@epitech.eu"
-      run: |
-        echo "$USER_GHUB"
-        echo "$USER_BLIH"
-        echo "$REPOSITORY_NAME"
-      shell: bash
+#
+#  blih2:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - uses: actions/204ducks_2019
+#    - name: test_env
+#      env:
+#        USER_GHUB: "Encorpluptit"
+#        USER_BLIH: "damien.bernard@epitech.eu"
+#      run: |
+#        echo "$USER_GHUB"
+#        echo "$USER_BLIH"
+#        echo "$REPOSITORY_NAME"
+#      shell: bash
+
