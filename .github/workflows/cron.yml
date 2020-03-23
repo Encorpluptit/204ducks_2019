@@ -1,9 +1,9 @@
-name: Sync
+name: "Synchronise Blih"
 
 on:
   push:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   blih:
@@ -16,8 +16,6 @@ jobs:
       run: echo "lol"
     - run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
       shell: bash
-    - run:   echo "$REPOSITORY_NAME"
-      shell: bash
     - name: test_env
       env:
         USER_GHUB: "Encorpluptit"
@@ -26,6 +24,7 @@ jobs:
         echo "$USER_GHUB"
         echo "$USER_BLIH"
         echo "$REPOSITORY_NAME"
+      shell: bash
     - name: Push Blih
       run: echo "gh"
 
