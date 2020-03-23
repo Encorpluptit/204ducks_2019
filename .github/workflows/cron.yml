@@ -24,10 +24,9 @@ jobs:
         echo "$USER_BLIH"
         echo "$REPOSITORY_NAME"
       shell: bash
-    - name: Push Blih
-#      run: pwd
-      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
-      shell: bash
+#    - name: Push Blih
+#      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+#      shell: bash
 
 
   blih2:
