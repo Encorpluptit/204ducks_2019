@@ -25,8 +25,8 @@ jobs:
         echo "$REPOSITORY_NAME"
       shell: bash
     - name: Push Blih
-      run: pwd
-#      run: bash ./GithubToBlih.sh $REPOSITORY_NAME
+#      run: pwd
+      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
       shell: bash
 
 #  blih2:
