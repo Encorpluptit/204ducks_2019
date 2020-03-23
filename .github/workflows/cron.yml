@@ -29,17 +29,18 @@ jobs:
       run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
       shell: bash
 
-#  blih2:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#    - uses: actions/checkout@v2
-#    - name: test_env
-#      env:
-#        USER_GHUB: "Encorpluptit"
-#        USER_BLIH: "damien.bernard@epitech.eu"
-#      run: |
-#        echo "$USER_GHUB"
-#        echo "$USER_BLIH"
-#        echo "$REPOSITORY_NAME"
-#      shell: bash
+
+  blih2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/204ducks
+    - name: test_env
+      env:
+        USER_GHUB: "Encorpluptit"
+        USER_BLIH: "damien.bernard@epitech.eu"
+      run: |
+        echo "$USER_GHUB"
+        echo "$USER_BLIH"
+        echo "$REPOSITORY_NAME"
+      shell: bash
