@@ -11,36 +11,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set Github Repo Name in env
-      run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
-      shell: bash
-    - name: test_env
-      env:
-        USER_GHUB: "Encorpluptit"
-        USER_BLIH: "damien.bernard@epitech.eu"
-      run: |
-        echo "$USER_GHUB"
-        echo "$USER_BLIH"
-        echo "$REPOSITORY_NAME"
-      shell: bash
-#    - name: Push Blih
-#      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
-#      shell: bash
+      - uses: actions/checkout@v2
+      - name: Set Github Repo Name in env
+        run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+        shell: bash
+      - name: test_env
+        env:
+          USER_GHUB: "Encorpluptit"
+          USER_BLIH: "damien.bernard@epitech.eu"
+        run: |
+          echo "$USER_GHUB"
+          echo "$USER_BLIH"
+          echo "$REPOSITORY_NAME"
+        shell: bash
+  #    - name: Push Blih
+  #      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+  #      shell: bash
 
 
   docker_test:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/204ducks_2019@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Hello world action step
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
 #
 #  blih2:
