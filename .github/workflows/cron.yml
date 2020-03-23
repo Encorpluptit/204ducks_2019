@@ -1,0 +1,35 @@
+name: Sync
+
+on:
+  push:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  blih:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    env:
+        USER_GHUB: "Encorpluptit"
+        USER_BLIH: "damien.bernard@epitech.eu"
+    - name: Sync
+      run: echo "lol"
+    - run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+      shell: bash
+    - run:   echo "$REPOSITORY_NAME"
+      shell: bash
+    - name: test_env
+      run: |
+        echo "$USER_GHUB"
+        echo "$USER_BLIH"
+        echo "$REPOSITORY_NAME"
+    - name: Push Blih
+      run: echo "gh"
+
+
+#        env:
+#          USER_GHUB: "Encorpluptit"
+#          USER_BLIH: "damien.bernard@epitech.eu"
