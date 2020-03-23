@@ -1,0 +1,6 @@
+build.sh
+README.MD
+Jenkinsfile
+.gitignore
+.git/
+.github/
