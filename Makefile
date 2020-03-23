@@ -9,7 +9,7 @@ $(NAME):
 clean:
 
 fclean: clean
-	@-rm $(NAME)
+	@-rm -f $(NAME)
 
 re: fclean all
 
