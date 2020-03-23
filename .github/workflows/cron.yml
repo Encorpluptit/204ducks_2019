@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Sync
-      run: echo "lol"
-    - run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+    - name: Set Github Repo Name in env
+      run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
       shell: bash
+
     - name: test_env
       env:
         USER_GHUB: "Encorpluptit"
@@ -28,6 +28,16 @@ jobs:
     - name: Push Blih
       run: echo "gh"
 
+  blih2:
+    - name: test_env
+      env:
+        USER_GHUB: "Encorpluptit"
+        USER_BLIH: "damien.bernard@epitech.eu"
+      run: |
+        echo "$USER_GHUB"
+        echo "$USER_BLIH"
+        echo "$REPOSITORY_NAME"
+      shell: bash
 
 #        env:
 #          USER_GHUB: "Encorpluptit"
