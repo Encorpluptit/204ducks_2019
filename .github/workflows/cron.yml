@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/204ducks
+    - uses: actions/204ducks_2019@v1
     - name: test_env
       env:
         USER_GHUB: "Encorpluptit"
