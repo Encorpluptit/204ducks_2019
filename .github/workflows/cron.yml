@@ -35,7 +35,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: actions/204ducks_2019@v1
+      uses: actions/204ducks_2019@
       with:
         who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step
