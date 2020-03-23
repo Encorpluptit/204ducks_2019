@@ -29,16 +29,16 @@ jobs:
       run: echo "gh"
 
   blih2:
-    - name: test_env
-      env:
-        USER_GHUB: "Encorpluptit"
-        USER_BLIH: "damien.bernard@epitech.eu"
-      run: |
-        echo "$USER_GHUB"
-        echo "$USER_BLIH"
-        echo "$REPOSITORY_NAME"
-      shell: bash
+    runs-on: ubuntu-latest
 
-#        env:
-#          USER_GHUB: "Encorpluptit"
-#          USER_BLIH: "damien.bernard@epitech.eu"
+    steps:
+    - uses: actions/checkout@v2
+      - name: test_env
+        env:
+          USER_GHUB: "Encorpluptit"
+          USER_BLIH: "damien.bernard@epitech.eu"
+      - run: |
+          echo "$USER_GHUB"
+          echo "$USER_BLIH"
+          echo "$REPOSITORY_NAME"
+        shell: bash
