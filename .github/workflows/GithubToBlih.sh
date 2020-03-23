@@ -19,18 +19,21 @@ else
     exit 1
 fi
 
-TMP_DIR="./temporary_repository"
 
 set -xe
-
-OLDPWD=$(pwd)
-
-rm -rf $TMP_DIR
-mkdir $TMP_DIR
-
-git clone --bare git@github.com:$USER_GHUB/$REPO_GHUB $TMP_DIR
-cd $TMP_DIR
 git push --mirror git@git.epitech.eu:$USER_BLIH/$REPO_BLIH
 
-cd $OLDPWD
-rm -rf $TMP_DIR
+
+#TMP_DIR="./temporary_repository"
+#set -xe
+#OLDPWD=$(pwd)
+
+#rm -rf $TMP_DIR
+#mkdir $TMP_DIR
+
+#git clone --bare git@github.com:$USER_GHUB/$REPO_GHUB $TMP_DIR
+#cd $TMP_DIR
+#git push --mirror git@git.epitech.eu:$USER_BLIH/$REPO_BLIH
+#
+#cd $OLDPWD
+#rm -rf $TMP_DIR
