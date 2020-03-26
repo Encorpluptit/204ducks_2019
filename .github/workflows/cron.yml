@@ -30,7 +30,7 @@ jobs:
 
 
   docker_test:
-    runs-on: self-hosted
+    runs-on: [linux]
     name: A job to say hello
     steps:
       # To use this repository's private action, you must check out the repository
