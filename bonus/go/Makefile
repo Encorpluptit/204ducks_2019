@@ -5,7 +5,7 @@ all : $(NAME)
 MAIN			=			main.go
 
 $(NAME):
-	go build $(MAIN)
+	@go build $(MAIN)
 
 clean:
 

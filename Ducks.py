@@ -66,9 +66,7 @@ class Duck:
 
     def run(self):
         self.esp = self.esperance(self.a, self.interval)
-        print(self.esp)
         self.std_dev = self.standard_deviation(self.a, self.esp, self.interval)
-        print(self.std_dev)
         return self
 
     def bonus(self):

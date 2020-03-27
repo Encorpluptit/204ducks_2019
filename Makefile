@@ -1,4 +1,10 @@
-NAME = 204ducks
+NAME			=			204ducks
+
+BONUS_PATH		=			bonus/
+
+GO_PATH			=			$(addprefix $(BONUS_PATH), go)
+
+HASKELL_PATH	=			$(addprefix $(BONUS_PATH), haskell)
 
 all : $(NAME) sign
 
@@ -7,12 +13,16 @@ $(NAME):
 	@-chmod u+x $(NAME)
 
 
-prez: $(NAME) sign
+prez: $(NAME) go_bonus sign
 
 go_bonus:
-	$(MAKE) -C bonus/go/
+	@$(MAKE) -C $(GO_PATH)
+
+haskell_bonus:
+	@$(MAKE) -C $(HASKELL_PATH)
 
 clean:
+	@$(MAKE)
 
 fclean: clean
 	@-rm -f $(NAME)
