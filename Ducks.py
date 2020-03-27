@@ -49,7 +49,7 @@ class Duck:
         return pow((t - esp), 2) * (Duck.probability_density(a, t) / 10)
 
     @staticmethod
-    def esperance(const: float, interval):
+    def esperance(const: float, interval: list):
         return sum(time * (Duck.probability_density(const, time) / 10) for time in interval) / interval[-1]
 
     @staticmethod
@@ -66,7 +66,9 @@ class Duck:
 
     def run(self):
         self.esp = self.esperance(self.a, self.interval)
+        print(self.esp)
         self.std_dev = self.standard_deviation(self.a, self.esp, self.interval)
+        print(self.std_dev)
         return self
 
     def bonus(self):
