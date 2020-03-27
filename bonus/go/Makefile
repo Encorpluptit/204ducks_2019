@@ -1,11 +1,11 @@
-NAME = 204ducks
+NAME			=			204ducks
 
 all : $(NAME)
 
 MAIN			=			main.go
 
 $(NAME):
-	@go build $(MAIN)
+	@go build -o $(NAME) $(MAIN)
 
 clean:
 
