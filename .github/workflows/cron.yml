@@ -52,6 +52,7 @@ jobs:
 #         run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
         run : |
           git remote add tek git@git.epitech.eu:/$USER_BLIH/$REPOSITORY_NAME
+          git push tek
         shell: bash
 
 
