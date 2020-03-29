@@ -13,7 +13,7 @@ elif [[ $# == 1 ]]; then
     USER_GHUB="$USER_GHUB"
     USER_BLIH="$USER_BLIH"
     REPO_BLIH="$1"
-    REPO_GHUB=$REPO_GHUB
+    REPO_GHUB="$REPO_BLIH"
 else
     echo "Usage: $0 REPO_NAME"
     exit 1
