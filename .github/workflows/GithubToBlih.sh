@@ -23,7 +23,7 @@ fi
 set -xe
 
 git clone --bare git@github.com:$USER_GHUB/$REPO_GHUB $REPO_GHUB
-cd $TMP_DIR
+cd $REPO_GHUB
 git push --mirror git@git.epitech.eu:$USER_BLIH/$REPO_BLIH
 
 cd $OLDPWD
