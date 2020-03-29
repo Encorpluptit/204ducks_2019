@@ -50,7 +50,8 @@ jobs:
 #           USER_GHUB: "Encorpluptit"
 #           USER_BLIH: "damien.bernard@epitech.eu"
 #         run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
-        run : echo $(pwd)
+        run : |
+          git remote add git@git.epitech.eu:/$USER_BLIH/$REPOSITORY_NAME
         shell: bash
 
 
