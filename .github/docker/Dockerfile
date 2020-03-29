@@ -165,3 +165,9 @@ RUN cd /tmp \
     && bash build_csfml.sh \
     && rm -rf /tmp/* \
     && chmod 1777 /tmp
+
+# Copies your code file from your action repository to the filesystem path `/` of the container
+COPY .github/scripts/Build.sh /Build.sh
+
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+ENTRYPOINT ["/Build.sh"]
