@@ -14,10 +14,14 @@ jobs:
       USER_BLIH: "damien.bernard@epitech.eu"
     steps:
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.2.0
-        with:
-          ssh-public-key: ${{ secrets.SSH_PUBLIC_KEY }}
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       - uses: webfactory/ssh-agent@v0.2.0
+#         with:
+#           ssh-public-key: ${{ secrets.SSH_PUBLIC_KEY }}
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SECRET_PRIVATE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
       - name: Set Github Repo Name in env
         run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
         shell: bash
