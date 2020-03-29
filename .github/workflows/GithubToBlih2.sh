@@ -22,6 +22,8 @@ fi
 
 set -xe
 
+TMP_DIR="tmp/"
+
 git clone --bare git@github.com:$USER_GHUB/$REPO_GHUB $TMP_DIR
 cd $TMP_DIR
 git push --mirror git@git.epitech.eu:$USER_BLIH/$REPO_BLIH
