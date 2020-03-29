@@ -49,7 +49,8 @@ jobs:
 #         env:
 #           USER_GHUB: "Encorpluptit"
 #           USER_BLIH: "damien.bernard@epitech.eu"
-        run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+#         run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+        run : git push tek
         shell: bash
 
 
