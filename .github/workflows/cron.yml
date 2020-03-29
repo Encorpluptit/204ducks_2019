@@ -20,7 +20,7 @@ jobs:
 #           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: |
           mkdir ~/.ssh
-          echo "${{ secrets.SECRET_PRIVATE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
       - name: Set Github Repo Name in env
         run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
