@@ -37,10 +37,10 @@ jobs:
         run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
         shell: bash
       - name: Push Blih
-#         run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
-        run : |
-          git remote add tek git@git.epitech.eu:/$USER_BLIH/$REPOSITORY_NAME
-          git push tek
+        run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+#         run : |
+#           git remote add tek git@git.epitech.eu:/$USER_BLIH/$REPOSITORY_NAME
+#           git push tek
         shell: bash
 
 
