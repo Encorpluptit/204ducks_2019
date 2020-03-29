@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: webfactory/ssh-agent@v0.2.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Set Github Repo Name in env
         run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
         shell: bash
@@ -24,9 +27,9 @@ jobs:
           echo "$USER_BLIH"
           echo "$REPOSITORY_NAME"
         shell: bash
-  #    - name: Push Blih
-  #      run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
-  #      shell: bash
+      - name: Push Blih
+        run: bash ./.github/workflows/GithubToBlih.sh $REPOSITORY_NAME
+        shell: bash
 
 
   docker_test:
