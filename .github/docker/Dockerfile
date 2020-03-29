@@ -167,7 +167,7 @@ RUN cd /tmp \
     && chmod 1777 /tmp
 
 RUN pwd
-RUN tree
+# RUN tree
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY Build.sh /Build.sh
 
