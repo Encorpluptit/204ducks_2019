@@ -26,11 +26,12 @@ jobs:
       - run: |
           which ssh-agent || ( sudo apt-get update -y && sudo apt-get install openssh-client -y )
           eval $(ssh-agent -s)
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+# echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
       - name: Set Github Repo Name in env
         run:   echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
         shell: bash
