@@ -24,7 +24,7 @@ jobs:
 #           chmod 600 ~/.ssh/id_rsa
 #           ssh-keyscan -t rsa git.epitech.eu
       - run: |
-          which ssh-agent || ( sudo apt-get update -y && sudo apt-get install openssh-client -y )'
+          which ssh-agent || ( sudo apt-get update -y && sudo apt-get install openssh-client -y )
           eval $(ssh-agent -s)
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
           mkdir -p ~/.ssh
