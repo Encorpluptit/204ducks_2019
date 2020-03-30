@@ -34,28 +34,26 @@ func StdDev(a float64, esp float64, end float64, interval []float64) float64 {
 	return math.Sqrt(result / interval[len(interval)-1])
 }
 
-func PercentBack(a float64, percent float64, end float64) float64 {
+func PercentBack(a float64, percent float64) float64 {
 	var result float64 = 0
 	var i float64 = 0
-	end = end * percent
-	interval := IntervalCreate(end)
+	interval := IntervalCreate(percent)
 
-	for idx := 0; i <= end; i += 0.001 {
-		result += ProbabilityDensity(a, interval[idx]/end)
+	for idx := 0; i <= percent; i += 0.001 {
+		result += 10  * ProbabilityDensity(a, interval[idx])
 		idx += 1
 	}
-	return result / 10
+	return result / 100
 }
 
-//@staticmethod
-//def percent_back(const: float, time_snd: int):
-//return sum(Duck.probability_density(const, i / Duck.max) for i in range(time_snd * Duck.max)) / 10
-//
-//@staticmethod
-//def time_back(a: float, p: float):
-//res = 0
-//for t in frange(0, Duck.max, 0.01):
-//res += Duck.probability_density(a, t)
-//if res >= p:
-//return t
-//raise ValueError
+func TimeBack(a, p float64, interval []float64) float64 {
+	var res float64 = 0
+
+	for idx := 0; idx < len(interval); idx += 1 {
+		res += ProbabilityDensity(a, interval[idx])
+		if res > p {
+			return interval[idx]
+		}
+	}
+	return 0
+}

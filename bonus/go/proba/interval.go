@@ -8,3 +8,12 @@ func IntervalCreate(end float64) []float64 {
 	}
 	return interval
 }
+
+func IntervalTimeBack(end float64) []float64 {
+	var interval []float64
+
+	for i := 0.; i <= end; i += 0.01 {
+		interval = append(interval, i)
+	}
+	return interval
+}

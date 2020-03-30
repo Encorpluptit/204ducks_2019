@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from math import exp, sqrt
-from decimal import *
 
 
 def frange(start: float, end: float = None, inc: float = 1.0):
@@ -68,6 +67,3 @@ class Duck:
         self.esp = self.esperance(self.a, self.interval)
         self.std_dev = self.standard_deviation(self.a, self.esp, self.interval)
         return self
-
-    def bonus(self):
-        pass
