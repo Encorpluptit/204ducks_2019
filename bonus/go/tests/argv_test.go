@@ -35,6 +35,8 @@ func TestArgv(t *testing.T) {
 		{[]string{"a"}, argv.ExitError},
 		{[]string{"2a"}, argv.ExitError},
 		{[]string{"3."}, argv.ExitError},
+		{[]string{""}, argv.ExitError},
+		{[]string{"3", "4"}, argv.ExitError},
 		{[]string{"2."}, 2.},
 		{[]string{"0.2"}, 0.2},
 		{[]string{"1.7"}, 1.7},
@@ -44,9 +46,7 @@ func TestArgv(t *testing.T) {
 		{[]string{"0"}, 0},
 	}
 
-
-
-	for _, table :=range tables {
+	for _, table := range tables {
 		res := argv.Check(table.arg)
 		if res != table.exp {
 			t.Errorf("Aruments [%v]) was incorrect", table.arg)

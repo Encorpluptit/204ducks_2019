@@ -1,8 +1,6 @@
 package proba
 
-import (
-	"math"
-)
+import "math"
 
 func ProbabilityDensity(a float64, t float64) float64 {
 	return a*math.Exp(-t) + (4-3*a)*math.Exp(-2*t) + (2*a-4)*math.Exp(-4*t)
@@ -40,7 +38,7 @@ func PercentBack(a float64, percent float64) float64 {
 	interval := IntervalCreate(percent)
 
 	for idx := 0; i <= percent; i += 0.001 {
-		result += 10  * ProbabilityDensity(a, interval[idx])
+		result += 10 * ProbabilityDensity(a, interval[idx])
 		idx += 1
 	}
 	return result / 100
@@ -56,4 +54,10 @@ func TimeBack(a, p float64, interval []float64) float64 {
 		}
 	}
 	return 0
+}
+
+func DivMod(numerator, denominator float64) (quotient, remainder int64) {
+	quotient = int64(numerator / denominator)
+	remainder = int64(numerator) % int64(denominator)
+	return
 }
