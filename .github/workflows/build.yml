@@ -16,7 +16,7 @@ jobs:
 
       - name: Upload Coverage
         env:
-          CODECOV_TOKEN="5c4ca17e-6dbf-4570-a9a6-b6b29d857432"
+          CODECOV_TOKEN: "5c4ca17e-6dbf-4570-a9a6-b6b29d857432"
         run: bash <(curl -s https://codecov.io/bash)
 
   blih:
