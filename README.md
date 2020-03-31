@@ -1,4 +1,5 @@
 ![Build](https://github.com/Encorpluptit/204ducks_2019/workflows/Build/badge.svg)
+
 .. image:: https://codecov.io/gh/codecov/example-python/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/codecov/example-python
 
