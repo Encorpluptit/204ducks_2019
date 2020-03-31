@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Script
-        run: bash ./.github/scripts/Build.sh "make" "make fclean" "make re" "make test_run"
+        run: bash ./.github/scripts/Build.sh "make" "make fclean" "make re" "make tests_run"
 
   blih:
     runs-on: ubuntu-latest
