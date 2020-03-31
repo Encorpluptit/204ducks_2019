@@ -1,5 +1,7 @@
 ![Build](https://github.com/Encorpluptit/204ducks_2019/workflows/Build/badge.svg)
 
+![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg)
+
 .. image:: https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/Encorpluptit/204ducks_2019
 
