@@ -13,8 +13,7 @@ $(NAME):
 
 tests_run:
 	@printf $(HEADER)"\nLaunching Go Unit Tests\n"$(END_HEADER)
-	@./gotest -v -cover ./tests
-	@go test -v -cover ./tests
+	@./gotest -v -coverpkg=./... ./tests
 
 clean:
 

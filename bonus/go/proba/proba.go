@@ -56,8 +56,8 @@ func TimeBack(a, p float64, interval []float64) float64 {
 	return 0
 }
 
-func DivMod(numerator, denominator float64) (quotient, remainder int64) {
-	quotient = int64(numerator / denominator)
-	remainder = int64(numerator) % int64(denominator)
+func DivMod(numerator, denominator float64) (quotient, remainder int) {
+	quotient = int(numerator / denominator)
+	remainder = int(numerator) % int(denominator)
 	return
 }
