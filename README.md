@@ -1,13 +1,6 @@
 ![Build](https://github.com/Encorpluptit/204ducks_2019/workflows/Build/badge.svg)
-
-![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg)
-
-![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/coverage.svg?branch=master)
-
-<!-- http://codecov.io/github/mirumee/saleor/coverage.svg?branch=master -->
-
-<!-- .. image:: https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg -->
-<!--   :target: https://codecov.io/gh/Encorpluptit/204ducks_2019 -->
+![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg)(https://codecov.io/gh/Encorpluptit/204ducks_2019)
+![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/coverage.svg?branch=master)(https://codecov.io/gh/Encorpluptit/204ducks_2019)
 
 # 204ducks_2019
 
