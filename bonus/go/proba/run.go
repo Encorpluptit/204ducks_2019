@@ -1,4 +1,4 @@
-package display
+package proba
 
 import (
 	"fmt"
@@ -16,9 +16,21 @@ type Duck struct {
 	PercentTwo float64
 }
 
-func Help(str string, ret float64) float64 {
-	fmt.Println(str)
-	return ret
+func Run(a float64) {
+	interval := IntervalCreate(100)
+	intervalTime := IntervalTimeBack(100)
+
+	esp := Esperance(a, interval, 100)
+	res := Duck{
+		Esp:        esp,
+		StdDev:     StdDev(a, esp, 100, interval),
+		PercentOne: PercentBack(a, 1),
+		PercentTwo: PercentBack(a, 2),
+	}
+	res.TB5M, res.TB5S = DivMod(TimeBack(a, 50., intervalTime)*60, 60)
+	res.TB9M, res.TB9S = DivMod(TimeBack(a, 99., intervalTime)*60, 60)
+
+	Result(&res)
 }
 
 func Result(res *Duck) {

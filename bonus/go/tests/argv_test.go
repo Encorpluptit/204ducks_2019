@@ -27,29 +27,35 @@ func TestArgv(t *testing.T) {
 	tables := []struct {
 		arg []string
 		exp float64
+		err *int
 	}{
-		{[]string{"-0.5"}, argv.ExitError},
-		{[]string{"-84"}, argv.ExitError},
-		{[]string{"50"}, argv.ExitError},
-		{[]string{"3"}, argv.ExitError},
-		{[]string{"a"}, argv.ExitError},
-		{[]string{"2a"}, argv.ExitError},
-		{[]string{"3."}, argv.ExitError},
-		{[]string{""}, argv.ExitError},
-		{[]string{"3", "4"}, argv.ExitError},
-		{[]string{"2."}, 2.},
-		{[]string{"0.2"}, 0.2},
-		{[]string{"1.7"}, 1.7},
-		{[]string{"1.8"}, 1.8},
-		{[]string{"2.4"}, 2.4},
-		{[]string{"2.5"}, 2.5},
-		{[]string{"0"}, 0},
+		{[]string{"-0.5"}, 0., &argv.ExitError},
+		{[]string{"-84"}, 0., &argv.ExitError},
+		{[]string{"50"}, 0., &argv.ExitError},
+		{[]string{"3"}, 0., &argv.ExitError},
+		{[]string{"a"}, 0., &argv.ExitError},
+		{[]string{"2a"}, 0., &argv.ExitError},
+		{[]string{"3."}, 0., &argv.ExitError},
+		{[]string{""}, 0., &argv.ExitError},
+		{[]string{"3", "4"}, 0., &argv.ExitError},
+		{[]string{"2."}, 2., nil},
+		{[]string{"0.2"}, 0.2, nil},
+		{[]string{"1.7"}, 1.7, nil},
+		{[]string{"1.8"}, 1.8, nil},
+		{[]string{"2.4"}, 2.4, nil},
+		{[]string{"2.5"}, 2.5, nil},
+		{[]string{"0"}, 0, nil},
 	}
 
 	for _, table := range tables {
-		res := argv.Check(table.arg)
+		res, err := argv.Check(table.arg)
+		if err != table.err {
+			t.Errorf(
+				"Aruments [%v]) incorrect, err is [%v] (Expected [%v]", table.arg, err, table.err)
+		}
 		if res != table.exp {
-			t.Errorf("Aruments [%v]) was incorrect", table.arg)
+			t.Errorf(
+				"Aruments [%v]) incorrect, err is [%v] (Expected [%v]", table.arg, err, table.err)
 		}
 	}
 }
