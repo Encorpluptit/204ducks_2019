@@ -14,6 +14,12 @@ jobs:
       - name: Build Script
         run: bash ./.github/scripts/Build.sh "make" "make fclean" "make re" "make tests_run"
 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov
+          # pip install -r requirements.txt
+
       - name: Upload Coverage
         env:
           CODECOV_TOKEN: "5c4ca17e-6dbf-4570-a9a6-b6b29d857432"

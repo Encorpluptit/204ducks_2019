@@ -1,0 +1,280 @@
+binary_path = "../204ducks.py"
+
+# A sample test
+[no_args]
+args = []
+status = 84
+
+[too_many_args]
+args = ["1", "2", "3"]
+status = 84
+
+[bad_constant]
+args = ["abc"]
+status = 84
+
+[negative_constant]
+args = ["-12"]
+status = 84
+
+[too_big_constant]
+args = ["3"]
+status = 84
+
+[example_subject_1_time_50]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 1m 04s\n"
+
+[example_subject_1_time_99]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 5m 04s\n"
+
+[example_subject_2_time_50]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 0m 39s\n"
+
+[example_subject_2_time_99]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 3m 16s\n"
+
+[example_subject_1_average_time]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 1m 21s\n"
+
+[example_subject_2_average_time]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 0m 50s\n"
+
+[example_subject_1_standard_deviation]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 1.074\n"
+
+[example_subject_2_standard_deviation]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 0.676\n"
+
+[example_subject_1_minute_1]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 46.9%\n"
+
+[example_subject_1_minute_2]
+args = ["1.6"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 79.1%\n"
+
+[example_subject_2_minute_1]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 71.3%\n"
+
+[example_subject_2_minute_2]
+args = ["0.2"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 94.2%\n"
+
+
+
+
+
+
+[print_help]
+args = ["-h"]
+status = 84
+stdout="USAGE:\n\t./204ducks const\nDESCRIPTION:\n\tconst\tconstant\t(between 0 and 2.5)\n"
+
+[Bad_argv_1]
+args = ["2.a"]
+status = 84
+stdout="USAGE:\n\t./204ducks const\nDESCRIPTION:\n\tconst\tconstant\t(between 0 and 2.5)\n"
+
+[Bad_argv_2]
+args = ["3"]
+status = 84
+stdout="USAGE:\n\t./204ducks const\nDESCRIPTION:\n\tconst\tconstant\t(between 0 and 2.5)\n"
+
+[Bad_argv_3]
+args = ["-1"]
+status = 84
+stdout="USAGE:\n\t./204ducks const\nDESCRIPTION:\n\tconst\tconstant\t(between 0 and 2.5)\n"
+
+[Bad_argv_4]
+args = ["1", "1"]
+status = 84
+stdout="USAGE:\n\t./204ducks const\nDESCRIPTION:\n\tconst\tconstant\t(between 0 and 2.5)\n"
+
+
+
+
+[1_dot_2_average_time]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 1m 12s\n"
+
+[1_dot_2_standard_deviation]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 1.005\n"
+
+[1_dot_2_time_50]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 0m 55s\n"
+
+[1_dot_2_time_99]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 4m 47s\n"
+
+[1_dot_2_minute_1]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 53.9%\n"
+
+[1_dot_2_minute_2]
+args = ["1.2"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 83.4%\n"
+
+
+
+
+[1_dot_9_average_time]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 1m 28s\n"
+
+[1_dot_9_standard_deviation]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 1.109\n"
+
+[1_dot_9_time_50]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 1m 11s\n"
+
+[1_dot_9_time_99]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 5m 15s\n"
+
+[1_dot_9_minute_1]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 41.7%\n"
+
+[1_dot_9_minute_2]
+args = ["1.9"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 75.8%\n"
+
+
+
+
+[0_dot_5_average_time]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 0m 56s\n"
+
+[0_dot_5_standard_deviation]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 0.808\n"
+
+[0_dot_5_time_50]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 0m 43s\n"
+
+[0_dot_5_time_99]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 3m 57s\n"
+
+[0_dot_5_minute_1]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 66.0%\n"
+
+[0_dot_5_minute_2]
+args = ["0.5"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 91.0%\n"
+
+
+
+
+[2_dot_four_average_time]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep 'Average return time'"
+stdout="Average return time: 1m 39s\n"
+
+[2_dot_four_standard_deviation]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep 'deviation'"
+stdout="Standard deviation: 1.141\n"
+
+[2_dot_four_time_50]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep 'Time after which 50%'"
+stdout="Time after which 50% of the ducks are back: 1m 23s\n"
+
+[2_dot_four_time_99]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep 'Time after which 99%'"
+stdout="Time after which 99% of the ducks are back: 5m 28s\n"
+
+[2_dot_four_minute_1]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep '1 minute'"
+stdout="Percentage of ducks back after 1 minute: 33.0%\n"
+
+[2_dot_four_minute_2]
+args = ["2.4"]
+status = 0
+pipe_stdout = "| grep '2 minute'"
+stdout="Percentage of ducks back after 2 minutes: 70.4%\n"
