@@ -1,6 +1,6 @@
 ![Build](https://github.com/Encorpluptit/204ducks_2019/workflows/Build/badge.svg)
-![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg)(https://codecov.io/gh/Encorpluptit/204ducks_2019)
-![CodeCov](https://codecov.io/gh/Encorpluptit/204ducks_2019/coverage.svg?branch=master)(https://codecov.io/gh/Encorpluptit/204ducks_2019)
+[![codecov](https://codecov.io/gh/Encorpluptit/204ducks_2019/branch/master/graph/badge.svg?token=Y18W92G3AM)](https://codecov.io/gh/Encorpluptit/204ducks_2019)
+
 
 # 204ducks_2019
 
