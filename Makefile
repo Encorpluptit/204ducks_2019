@@ -45,7 +45,8 @@ fclean: clean
 	@-rm -f $(NAME)
 	@-$(MAKE) -s -C $(GO_PATH) fclean
 	@-$(RM) $(GO_BIN)
-	@-$(RM) $(COV_FILE) $(PY_CACHE)
+	@-$(RM) $(COV_FILE)
+	@-$(RM) -d $(COV_FILE)
 
 re: fclean all
 
