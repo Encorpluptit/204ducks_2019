@@ -11,7 +11,7 @@ Mathematical Equations are not totally functional.
 (made with [Killian Clette](https://github.com/Skerilyo))
 
 ### [Subject](Project/B-MAT-400_204ducks.pdf) :
-A study is being conducted about these ducks, and you are asked to compute and display the following,given the value ofa:
+A study is being conducted about these ducks, and you are asked to compute and display the following, given the value of a:
  - The average time after which ducks come back.
  - The standard deviation of the ducks’ return time.
  - The time after which 50% of all of the ducks are back.
@@ -27,11 +27,11 @@ Build:
 
 Python Script:
 
-    ./204ducks 1.6
+    ./204ducks a
 
 Go binary:
 
-    ./204Go 1.6
+    ./204Go a
 
 ### Help :
     ./204ducks -h
